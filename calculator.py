@@ -12,6 +12,9 @@ def divide(x, y):
         return "Error: Division by zero"
     return x / y
 
+def power(x, y):
+    return x ** y
+
 def is_valid_number(num_str):
     try:
         float(num_str)
@@ -20,16 +23,17 @@ def is_valid_number(num_str):
         return False
 
 def calculator():
-    print("Simple Calculator")
+    print("Enhanced Calculator")
     print("1. Add")
     print("2. Subtract")
     print("3. Multiply")
     print("4. Divide")
+    print("5. Power (x^y)")
     
     while True:
-        choice = input("Enter choice (1/2/3/4): ")
-        if choice not in ['1', '2', '3', '4']:
-            print("Invalid choice! Please enter 1, 2, 3, or 4")
+        choice = input("Enter choice (1/2/3/4/5): ")
+        if choice not in ['1', '2', '3', '4', '5']:
+            print("Invalid choice! Please enter 1, 2, 3, 4, or 5")
             continue
         
         num1_str = input("Enter first number: ")
@@ -54,6 +58,8 @@ def calculator():
         elif choice == '4':
             result = divide(num1, num2)
             print(f"{num1} / {num2} = {result}")
+        elif choice == '5':
+            print(f"{num1} ^ {num2} = {power(num1, num2)}")
         
         break
 
